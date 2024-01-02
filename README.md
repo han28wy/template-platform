@@ -1,2 +1,2 @@
 # template-platform
-平台模板 vue3+pinia+elementPlus
+平台模板 vue3+vite+ts+pinia+elementPlus
