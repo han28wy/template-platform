@@ -1,11 +1,15 @@
-import { createApp } from 'vue'
-import './style.css'
-import { router } from './router';
-import { store } from './store';
-import App from './App'
+import { createApp } from 'vue';
+import App from './App.vue';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+import { setupStore } from '@/stores';
+import './styles/index.scss';
+// import ElementPlus from 'element-plus';
+// import 'element-plus/dist/index.css';
 
 const app = createApp(App);
-app.use(store);
-app.use(router);
+// app.use(ElementPlus);
 
-app.mount('#app')
+dayjs.locale('zh-ch');
+setupStore(app);
+app.mount('#app');
