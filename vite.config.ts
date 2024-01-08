@@ -39,6 +39,7 @@ export default defineConfig(({ mode }) => {
         '@views': resolve('./src/views')
       }
     },
+    base: env.VITE_APP_BASE_URL,
     server: {
       proxy: {
         '/api': {
