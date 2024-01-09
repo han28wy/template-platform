@@ -29,6 +29,7 @@
 
 <script lang="ts" setup>
 import { reactive } from 'vue';
+import { userStore } from '@/stores/user';
 
 const formInline = reactive({
   user: '',
@@ -36,8 +37,18 @@ const formInline = reactive({
   date: ''
 });
 
+const router = useRouter();
 const onSubmit = () => {
   console.log('submit!');
+  userStore()
+    .login()
+    .then(() => {
+      console.log('登录成功');
+      router.push('/home');
+    })
+    .catch(() => {
+      console.log('登录失败');
+    });
 };
 </script>
 
